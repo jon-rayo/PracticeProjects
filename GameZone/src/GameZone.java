@@ -52,7 +52,7 @@ public class GameZone {
 			total = total +player;
 			System.out.printf("You drew a " + player + ". \n");
 			System.out.printf("Your current total is " + total  + ". \n" );
-			if (total > 21) {
+			if (total >= 21) {
 				break;
 			}
 			System.out.println("Do you want another card? ");
@@ -61,6 +61,9 @@ public class GameZone {
 		System.out.println(" ");
 		if (total > 21) {
 			System.out.println("You drew more than 21. You lost.");
+		}
+		else if (total == 21) {
+			System.out.println("Your drew exactly 21. You win!");
 		}
 		else if (total > dealer) {
 			System.out.printf("The computer drew " + dealer +"\n");
