@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Random;
 /**
- * This is the Game Zone!. Where you have a choice to play either 21 or Rock Paper Scissors. Enjoy!
+ * This is the Game Zone! Where you have a choice to play either 21 or Rock Paper Scissors. Enjoy!
  * @author Jonathan Rayo
  *
  */
