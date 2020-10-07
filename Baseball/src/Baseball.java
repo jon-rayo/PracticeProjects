@@ -6,6 +6,7 @@ public class Baseball {
 
 	/**
 	 * This function will print the header welcoming the user to the program
+	 * There is space to allow for a cleaner look.
 	 */
 	public static void printHeader() {
 		System.out.println("************************************");
