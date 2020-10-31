@@ -65,35 +65,35 @@ public class CovidPlotter {
 	 * @param plot
 	 */
 	public static void showPlotForCumulative(Plot2DPanel plot) {
-		plot.addLegend("SOUTH"); // where to put the legend
-		plot.setAxisLabels("Day","Deaths"); //x and y axis
-		BaseLabel title = new BaseLabel("Cumulative Deaths",Color.RED,0.5,1.1); // set our title
-		plot.addPlotable(title); // make our title come alive 
-		//creating the frame.
 		JFrame frm = new JFrame();
-		frm.setTitle("Cumulative Deaths"); // set the window title
-		frm.setBounds(100,100,500,500); // set the window bounds
+		frm.setTitle("Cumulative Deaths");
+		frm.setBounds(100,100,500,500);
+		plot.addLegend("SOUTH");
+		plot.setAxisLabels("Day","Deaths");
 		frm.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // get rid of memory
 		Container c = frm.getContentPane();
+		BaseLabel title = new BaseLabel("Cumulative Deaths",Color.RED,0.5,1.1);
+		plot.addPlotable(title);
 		c.setLayout(new BorderLayout());
 		c.add(plot,BorderLayout.CENTER);
 		frm.setVisible(true);
 	}
+	
+	
 	/**
 	 * This function will plot the data for the daily deaths.
 	 * @param plot
 	 */
 	public static void showPlotForDaily(Plot2DPanel plot) {
-		plot.addLegend("SOUTH");
-		plot.setAxisLabels("Day","Deaths");
-		BaseLabel title = new BaseLabel("Daily Deaths",Color.RED,0.5,1.1);
-		plot.addPlotable(title);
-		//creating the frame.
 		JFrame frm = new JFrame();
 		frm.setTitle("Daily Deaths");
 		frm.setBounds(100,100,500,500);
+		plot.addLegend("SOUTH");
+		plot.setAxisLabels("Day","Deaths");
 		frm.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // get rid of memory
 		Container c = frm.getContentPane();
+		BaseLabel title = new BaseLabel("Daily Deaths",Color.RED,0.5,1.1);
+		plot.addPlotable(title);
 		c.setLayout(new BorderLayout());
 		c.add(plot,BorderLayout.CENTER);
 		frm.setVisible(true);
