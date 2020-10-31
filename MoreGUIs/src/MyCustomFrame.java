@@ -22,7 +22,7 @@ public class MyCustomFrame extends JFrame {
 	 */
 	/*
 	 * there are two types of constructors: default and non-default.
-	 * default constructors take in no params and se tht edata to default values
+	 * default constructors take in no params and set the data to default values
 	 * non-default constructors take in params and use them to set the data members' values
 	 * you can have two functions with the same name - function overloading
 	 * this is allowed if the two functions differ in the order, type, and/or number of their
