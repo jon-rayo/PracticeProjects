@@ -235,19 +235,19 @@ public class TilePanel extends JPanel implements MouseListener {
 	public void mouseClicked(MouseEvent e) { 
 		TileWriter dw = new TileWriter();
 		dw.writeToText("tiles.txt", tiles);
-		if (e.getX() > 10 && e.getX() < 150) { // first tile
+		if (e.getX() > 10 && e.getX() < 150 && e.getY() > y && e.getY() < 230) { // first tile
 			tile1.setRandomly();
 			repaint();
 		}
-		else if (e.getX() > 200 && e.getX() < 350) { // second tile
+		else if (e.getX() > 200 && e.getX() < 350 && e.getY() > y && e.getY() < 230) { // second tile
 			tile2.setRandomly();
 			repaint();
 		}
-		else if ( e.getX() > 400 && e.getX() < 550) { // third tile
+		else if ( e.getX() > 400 && e.getX() < 550 && e.getY() > y && e.getY() < 230) { // third tile
 			tile3.setRandomly();
 			repaint();
 		}
-		else if (e.getX() > 600 && e.getX() < 750) { // fourth tile
+		else if (e.getX() > 600 && e.getX() < 750 && e.getY() > y && e.getY() < 230) { // fourth tile
 			tile4.setRandomly();
 			repaint();
 		}
