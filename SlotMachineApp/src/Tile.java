@@ -1,50 +1,72 @@
 import java.io.Serializable;
+import java.util.Random;
 
 public class Tile implements Serializable {
-	private int x;
-	private int y;
-	private int tileWidth;
-	private int tileHeight;
+	private int tileColor;
+	private int tileShape;
 	
-	public int getX() {
-		return x;
+	public int getTileColor() {
+		return tileColor;
 	}
-	public int getY() {
-		return y;
+	public int getTileShape() {
+		return tileShape;
 	}
-	public int getTileWidth() {
-		return tileWidth;
+	/**
+	 * 
+	 * @param ts the shape it will be 
+	 * 0 for squares
+	 * 1 for circle
+	 */
+	public void setTileShape(int ts) {
+		if (ts == 0) {
+			tileShape = 0; // square
+		}
+		else {
+			tileShape = 1; // circle
+		}
 	}
-	public int getTileHeight() {
-		return tileHeight;
+	/**
+	 * 
+	 * @param tc the color it will have
+	 * 0 for red
+	 * 1 for blue
+	 * 2 for orange
+	 * 3 for yellow
+	 * 4 for green
+	 */
+	public void setTileColor (int tc) {
+		if (tc == 0) {
+			tileColor = 0; // red
+		}
+		else if ( tc == 1) {
+			tileColor = 1; // blue
+		}
+		else if (tc == 2) {
+			tileColor =2; // orange
+		}
+		else if (tc == 3) {
+			tileColor = 3; // yellow
+		}
+		else if (tc == 4) { // green
+			tileColor = 4;
+		}
 	}
-	public void setX(int x) {
-		this.x = x;
-	}
-	public void setY(int y) {
-		this.y = y;
-	}
-	public void setTileWidth(int width) {
-		tileWidth = width;
-	}
-	public void setTileHeight(int height) {
-		tileHeight = height;
+	public void setRandomly() {
+		Random rnd = new Random ();
+		this.tileShape = rnd.nextInt(2);
+		this.tileColor = rnd.nextInt(5);
 	}
 	public Tile() {
-		x = 100;
-		y = 75;
-		tileWidth = 100;
-		tileHeight = 100;
+		tileColor = 0;
+		tileShape = 0;
 	}
-	public Tile(int x, int y, int width, int height) {
-		setX(x);
-		setY(y);
-		setTileWidth(width);
-		setTileHeight(height);
+	public Tile( int color, int shape) {
+		setTileColor(color);
+		setTileShape(shape);
 	}
 	@Override
 	public String toString() {
-		return String.format("%d %d %d %d", x, y, tileWidth, tileHeight);
+		return String.format("%d %d", tileColor, tileShape);
 	}
 }
 

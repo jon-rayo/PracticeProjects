@@ -31,6 +31,11 @@ public class SlotMachineFrame extends JFrame {
 		int top = (screenHeight - height)/2;
 		setBounds(left,top,width,height);
 	}
+	/**
+	 * This will set up the way the menu will look like
+	 * with the drop down menu
+	 * 
+	 */
 	public void setupMenu() {
 		JMenuBar mbar = new JMenuBar();
 		JMenu mnuFile = new JMenu("File");
@@ -41,7 +46,7 @@ public class SlotMachineFrame extends JFrame {
 				TileWriter tw;
 				if (jfc.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
 					tw = new TileWriter();
-					if (tw.writeToText(jfc.getSelectedFile(),pan.getTiles())) {
+					if (tw.write(jfc.getSelectedFile(),pan.getTiles())) {
 						JOptionPane.showMessageDialog(null, "Tiles were written");
 					} else {
 						JOptionPane.showMessageDialog(null, "Tiles could not be written");
@@ -50,6 +55,23 @@ public class SlotMachineFrame extends JFrame {
 			}
 		});
 		JMenuItem miLoad = new JMenuItem("Load Tiles");
+		miLoad.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFileChooser jfc = new JFileChooser();
+				TileReader tr;
+				ArrayList<Tile> tilesRead;
+				if (jfc.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+					tr = new TileReader();
+					tilesRead = tr.read(jfc.getSelectedFile());
+					if (tilesRead == null) {
+						JOptionPane.showMessageDialog(null, "Could not be read.");
+					} else {
+						pan.setTiles(tilesRead);
+						repaint();
+					}
+				}
+			}
+		});
 		JMenuItem miPrint = new JMenuItem("Print");
 		JMenuItem miRestart = new JMenuItem("Restart");
 		JMenuItem miExit = new JMenuItem("Exit");
@@ -75,7 +97,9 @@ public class SlotMachineFrame extends JFrame {
 		mbar.add(mnuHelp);
 		setJMenuBar(mbar);
 	}
-	
+	/**
+	 * Sets up the way the frame will look like when the application starts
+	 */
 	public void setupLook() {
 		centerFrame(800,400);
 		setTitle("Vegas Baby, Vegas! Slot Machine");
@@ -98,7 +122,6 @@ public class SlotMachineFrame extends JFrame {
 		c.add(panSouth,BorderLayout.SOUTH);
 		setupMenu();
 	}
-	
 	public SlotMachineFrame() {
 		setupLook();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
