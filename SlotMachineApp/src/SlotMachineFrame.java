@@ -90,7 +90,7 @@ public class SlotMachineFrame extends JFrame {
 		JMenuItem miAbout = new JMenuItem("About");
 		miAbout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Jonathan Rayo 'GitHub Link'");
+				JOptionPane.showMessageDialog(null, "Jonathan Rayo https://github.com/jon-rayo/cpsc24500_workspace/tree/master/SlotMachineApp");
 			}
 		});
 		mnuHelp.add(miAbout);
