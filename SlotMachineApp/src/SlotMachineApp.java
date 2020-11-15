@@ -22,6 +22,6 @@ import javax.swing.JTextField;
 public class SlotMachineApp {
 	public static void main(String[] args) {
 		SlotMachineFrame frm = new SlotMachineFrame();
-		frm.setVisible(true);
+		frm.setVisible(true); 
 	}
 }
