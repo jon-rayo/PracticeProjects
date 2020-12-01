@@ -30,6 +30,7 @@ public class SlotMachineFrame extends JFrame {
 	private JTextField txtMoney;
 	private JButton btnMax, btnMid, btnMin;
 	private double  money = 5.00;
+	private double bet;
 	private TileChecker tc;
 	
 	
@@ -98,6 +99,7 @@ public class SlotMachineFrame extends JFrame {
 		JMenuItem miRestart = new JMenuItem("Restart");
 		miRestart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				money = 5.00;
 				pan.randomizeSlots(); // randomizes the tiles when restarting.
 				btnMax.setEnabled(true);
 				btnMid.setEnabled(true);
@@ -147,7 +149,7 @@ public class SlotMachineFrame extends JFrame {
 		panSouth.add(btnMax);
 		btnMax.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				double bet = money; // getting the money set to the amount bet.
+				bet = money; // getting the money set to the amount bet.
 				money = tc.checkMax(tiles, bet); // set money = to the checkMax function that takes in the tiles and amount bet.
 				txtMoney.setText(String.format("%.2f", money)); // prints the updated money to the JTxtField
 				if (money <= 0) {
@@ -167,7 +169,7 @@ public class SlotMachineFrame extends JFrame {
 		panSouth.add(btnMid);
 		btnMid.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				double bet = money/2;// getting the money set to the amount bet/2 since mid is half.
+				bet = money/2;// getting the money set to the amount bet/2 since mid is half.
 				money = tc.checkMid(tiles, bet); // set money = to the checkMid function that takes in the tiles and amount bet.
 				txtMoney.setText(String.format("%.2f", money)); // prints the updated money to the JTxtField
 				if (money <= 0) {
@@ -187,7 +189,7 @@ public class SlotMachineFrame extends JFrame {
 		panSouth.add(btnMin);
 		btnMin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				double bet = money/10; // getting the money set to the amount bet/10 since min is 10%.
+				bet = money/10; // getting the money set to the amount bet/10 since min is 10%.
 				money = tc.checkMin(tiles, bet); // set money = to the checkMin function that takes in the tiles and amount bet.
 				txtMoney.setText(String.format("%.2f", money));
 				if (money <= 0) {

@@ -64,7 +64,7 @@ public class TileChecker {
 	 * @return the money lost or earned.
 	 */
 	public double checkMid(ArrayList<Tile> tiles, double bet) {
-		money = bet;
+		money = bet*2;
 		sameColor = true;
 		sameShape = true;
 		tile = tiles.get(0);
@@ -86,7 +86,7 @@ public class TileChecker {
 		} else if(sameColor == true) {
 			money = money + (10*bet);
 		}else {
-			money = money - bet;
+			money = money-bet;
 		}
 		return money;
 	}
@@ -102,7 +102,7 @@ public class TileChecker {
 	 * @return the money lost or earned.
 	 */
 	public double checkMin(ArrayList<Tile> tiles, double bet) {
-		money = bet;
+		money = bet*10;
 		sameColor = true;
 		sameShape = true;
 		tile = tiles.get(0);
@@ -124,7 +124,7 @@ public class TileChecker {
 		} else if(sameColor == true) {
 			money = money + (5*bet);
 		}else {
-			money = money - bet;
+			money =money - bet ;
 		}
 		return money;
 	}
