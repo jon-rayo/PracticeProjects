@@ -7,7 +7,12 @@ import java.io.FileWriter;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-
+/**
+ * This class will produce tiles in multiple formats
+ * including .txt, .bin, .xml files.
+ * @author Jonathan Rayo
+ *
+ */
 public class TileWriter {
 	/**
 	 * Write tiles to a text file

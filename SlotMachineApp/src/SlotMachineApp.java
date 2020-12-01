@@ -18,7 +18,11 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
+/**
+ * This is the main class that will run the application. 
+ * @author Jonathan Rayo
+ *
+ */
 public class SlotMachineApp {
 	public static void main(String[] args) {
 		SlotMachineFrame frm = new SlotMachineFrame();
